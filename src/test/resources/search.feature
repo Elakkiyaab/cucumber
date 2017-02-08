@@ -1,10 +1,12 @@
 Feature: perform search in the fund.nl
-  Using quick search.
+  Using koop search.
 
-@OpenHomePage
-Scenario Outline: Field error message validation
-  When fill input parameters "<Place>","<Distance>","<MinPrice>","<MaxPrice>"
-  Then I see text message saying"<Text>" located at "<Locator>"
-  Examples:
-    |Place        |Distance|MinPrice    |MaxPrice       |Text   |Locator|
-    |Eindhoven    |1       |50000       |75000          |       |       |
+
+Scenario: koop search
+  When I enter data in search fields
+    |Fields        |values          |
+    |Place         |Eindhoven       |
+    |Distance      |1               |
+    |MinPrice      |50000           |
+    |Maxprice      |75000           |
+  Then I see the search results of the search
