@@ -1,0 +1,80 @@
+/**
+
+  Search search = (Search) utils.searchOptions(fileName,Search.class);
+        System.out.print("the test"+ search);
+        driver.findElement(By.id("lst-ib")).sendKeys(search.getSearchValue());
+
+
+        */
+
+
+/**
+
+
+public class Search {
+
+    String searchValue;
+
+    @Override
+    public String toString() {
+        return "Search{" +
+                "searchValue='" + searchValue + '\'' +
+                '}';
+    }
+
+    @XmlElement
+    public void setSearchValue(String searchValue) {
+        this.searchValue = searchValue;
+    }
+    public String getSearchValue() {
+        return searchValue;
+    }
+
+}*/
+
+
+/*
+
+public class FileUtils {
+
+    public  Object searchOptions(String fileName,Class className) {
+        try {
+
+            File file = new File("D:\\Project\\maven\\samplecucumber\\src\\test\\java\\resources\\testdata\\"+fileName+".xml");
+            JAXBContext jaxbContext = JAXBContext.newInstance(className);
+
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            return jaxbUnmarshaller.unmarshal(file);
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+}**/
+
+
+/**
+public class Gson2Example {
+    public static void main(String[] args) {
+
+        Gson gson = new Gson();
+
+        try (Reader reader = new FileReader("D:\\staff.json")) {
+
+            // Convert JSON to Java Object
+            Staff staff = gson.fromJson(reader, Staff.class);
+            System.out.println(staff);
+
+            // Convert JSON to JsonElement, and later to String
+            /*JsonElement json = gson.fromJson(reader, JsonElement.class);
+            String jsonInString = gson.toJson(json);
+            System.out.println(jsonInString);*/
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}*/
